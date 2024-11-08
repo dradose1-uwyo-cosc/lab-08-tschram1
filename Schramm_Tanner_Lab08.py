@@ -3,7 +3,7 @@
 # Submission Date
 # Lab 08
 # Lab Section: 10
-# Sources, people worked with, help given to: I used Chat GPT to fallw line 58 to work because what I had did not work so I asked Chat GPT to help me with this line and it gave me what is now in line 58. 
+# Sources, people worked with, help given to: I used Chat GPT to get line 58 to work because what I had did not work so I asked Chat GPT to help me with this line and it gave me what is now in line 58. 
 # your
 # comments
 # here
@@ -103,3 +103,34 @@ print("*" * 75)
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
 
+
+def quadratic_formula(a,b,c):
+
+    discriminant=b**2-(4*a*c)
+
+    if discriminant<0:
+        print("null")
+    
+    pos_root=(-b+(discriminant**.5))/(2*a)
+    neg_root=(-b-(discriminant**.5))/(2*a)
+
+    if discriminant == 0:
+        return f"The root is {pos_root}"  
+    else:
+        return f"The roots are {pos_root} and {neg_root}"
+
+while True:
+    user=input("Enter a, b, c, or exit to quit:")
+    if user.lower()=="exit":
+        break
+    
+    user=user.replace(" ","")
+
+    a_str, b_str, c_str=user.split(",")
+
+    a=number_converter(a_str)
+    b=number_converter(b_str)
+    c=number_converter(c_str)
+
+    answer=quadratic_formula(a, b, c)
+    print(answer)
